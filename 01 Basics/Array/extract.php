@@ -40,7 +40,7 @@ $var_array = array("color" => "blue",101,102,
     next($var_array);
  }
 
-//output : 
+// output : 
 // blue
 // 101
 // 102
