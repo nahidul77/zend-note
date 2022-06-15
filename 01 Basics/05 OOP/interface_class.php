@@ -11,6 +11,15 @@
 
 # object created by child class
 
+/**
+ * Interface comes under fully abstraction.
+ * Interfaces can maintain only abstract methods.
+ * In interfaces, we can't create the variables.
+ * In interface, we can use only public access specifier.
+ * By using 'implement' keyword we can get interface from derived class.
+ * By using interfaces multiple inheritance is possible.
+ */
+
 
 interface parent1
 {
