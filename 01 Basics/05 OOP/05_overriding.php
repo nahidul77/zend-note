@@ -1,5 +1,5 @@
 <?php
-class base
+class FirstClass
 {
 
     public $name = "Parent Class";
@@ -10,7 +10,7 @@ class base
     }
 }
 
-class derived extends base
+class DerivedClass extends FirstClass
 {
 
     public $name = "Child Class";
@@ -21,6 +21,10 @@ class derived extends base
     }
 }
 
-$test = new base();
+$test = new FirstClass;
+
+echo $test->calc(5, 10);
+
+$test = new DerivedClass;
 
 echo $test->calc(5, 10);
