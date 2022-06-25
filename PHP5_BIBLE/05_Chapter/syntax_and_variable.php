@@ -34,3 +34,21 @@
  * 
  * you can pass information from page to page using GET and POST variables, store information persistently in a database, associate it with a user’s session using PHP’s session mechanism, or store it on a user’s hard disk via a cookie.
  */
+
+
+/**
+ * constant
+
+  constants, which have a single value throughout their lifetime. Constants do not have a $ before their names, and by conven-tion the names of constants usually are in uppercase letters. 
+  Constants can contain only scalar values (numbers and string). 
+  Constants have global scope, so they are accessible everywhere in your scripts after they have been defined—even inside functions.
+ */
+
+// define('NAME', 'Nahidul Islam');
+
+// function getName()
+// {
+//     echo NAME; //constant global scope
+// }
+
+// getName(); //output: Nahidul Islam
