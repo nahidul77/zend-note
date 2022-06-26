@@ -160,3 +160,21 @@ Variable Interpolation
 // $that = "that";
 // $the_other = 2.2000000000;
 // print("$thi, $not_set, $that+$the_other \n");  // undefined variable $not_set
+
+
+//________________________echo and print
+
+/**
+ * You can also give multiple arguments to the unparenthesized version of echo, separated by commas, as in:
+echo “This will print in the “, “user’s browser window.”;
+
+The parenthesized version, however, will not accept multiple arguments:
+echo (“This will produce a “, “PARSE ERROR!”);
+
+### Print vs echo
+
+The command print is very similar to echo, with two important differences:
+✦ Unlike echo, print can accept only one argument.
+✦ Unlike echo, print returns a value, which represents whether the print statement
+succeeded.
+ */
