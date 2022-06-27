@@ -166,10 +166,10 @@ Variable Interpolation
 
 /**
  * You can also give multiple arguments to the unparenthesized version of echo, separated by commas, as in:
-echo “This will print in the “, “user’s browser window.”;
+echo "This will print in the ", "user’s browser window.";
 
 The parenthesized version, however, will not accept multiple arguments:
-echo (“This will produce a “, “PARSE ERROR!”);
+echo ("This will produce a ", "PARSE ERROR!");
 
 ### Print vs echo
 
@@ -178,3 +178,14 @@ The command print is very similar to echo, with two important differences:
 ✦ Unlike echo, print returns a value, which represents whether the print statement
 succeeded.
  */
+
+
+$string_1 = "00008";
+$string_2 = "007";
+$string_3 = "00008-OK";
+if ($string_2 < $string_1)
+    print("($string_2 is less than $string_1 \n");
+if ($string_3 < $string_2)
+    print("$string_3 is less than $string_2 \n");
+if ($string_1 < $string_3)
+    print("$string_1 is less than $string_3 \n");
