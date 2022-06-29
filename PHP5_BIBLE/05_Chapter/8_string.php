@@ -40,3 +40,13 @@ ENDOFFORM;
 
 This has the effect of echoing a very simple form to the browser.
  */
+
+
+//________________________string functions_____________
+
+//strpbrk
+$haystack = 'Lala Bangladesh';
+$needle = 'la';
+
+echo strpos($haystack, $needle); //2
+// echo strpbrk($haystack, $needle); //ala Bangladesh
