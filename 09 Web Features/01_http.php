@@ -29,5 +29,29 @@
  * 
  * http status code_________________________________
  * 
+ * 1xx : Informational
+ * Request recieved / processing
+ * 
+ * 2xx : success
+ * Successfully Recieved, understood, accepted
+ * 
+ * 3xx : Redirect
+ * Further actioin must be taken / redirect
+ * 
+ * 4xx : Client Error
+ * Request Doest not have what it needs
+ * 
+ * 5xx : Server Error 
+ * Server Failed to fulfil an apparent valid request
+ * 
+ * such as, 
+ * 200 - ok
+ * 201 - ok created
+ * 301 - moved to new url
+ * 304 - not modifed (cached version)
+ * 400 - bad request
+ * 401 - Unauthorized
+ * 404 - not Found
+ * 500 - Internal server error
  * 
  */
