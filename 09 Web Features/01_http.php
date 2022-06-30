@@ -63,4 +63,13 @@
  * echo the contents of an HTTPs Request back to the client which can be used for debugging purpose at the time of development.
  * Simply request that the server recieved echo back the request.
  * 
+ * http options method_______________________
+ * 
+ * the options method is used by the client to find out what are the http methods and other options supported by a web server. (*) means whole server
+ * 
+ * http head method__________________________
+ * 
+ * head method is same as get. but only transfer the status line and header section. it is used to ask only for information about a document, not for the document itself. Head is faster than get, as a much smaller amount of data is transferred. its often used by clients who use caching, to see if the document has changed since it was last accessed. if it was not , then the local copy can be reused, otherwise the updated version must be retrieved with a get.
+ * 
+ * this method is often used for testing hypertext links for validity , accessibility and recent modification.
  */
