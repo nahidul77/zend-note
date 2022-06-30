@@ -54,4 +54,13 @@
  * 404 - not Found
  * 500 - Internal server error
  * 
+ * http connect method_______________________
+ * 
+ * The CONNECT method is used by the client to establish a network connection to a web server over HTTP. it creates an end-to-end tunnel between two machines through a proxy/firewall machine.
+ * 
+ * http trace method_________________________
+ * 
+ * echo the contents of an HTTPs Request back to the client which can be used for debugging purpose at the time of development.
+ * Simply request that the server recieved echo back the request.
+ * 
  */
