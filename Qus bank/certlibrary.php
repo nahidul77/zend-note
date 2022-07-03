@@ -125,3 +125,27 @@
 # Q10
 
 // echo "22" + "0.2", 23 . 1; // output: 22.2231
+
+//_______________________________________________
+
+# Q11
+
+//Bitwise XOR takes two numbers as operands and does XOR on every bit of two numbers. The result of XOR is 1 if the two bits are different.
+
+// echo 1 ^ 2; //output : 3
+
+//________________________________________________
+
+# Q12
+
+// $first = "second";
+// $second = "first";
+// echo $ $$first; // output : second
+
+//________________________________________________
+
+# Q13
+
+#Your supervisor wants you to disallow PHP scripts to open remote HTTP and FTP resources using PHP's file functions. Which php.ini setting should you change accordingly?
+
+# allow_url_fopen=off 
