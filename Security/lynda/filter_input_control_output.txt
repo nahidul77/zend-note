@@ -1,0 +1,53 @@
+# Filter Input
+    - Regulating Request (A website that does not examine the request method, will accept both methods for all pages. Make sure that your application accepts only the request methods that you expect and ignores all others)
+        -- a request typically sends two keys values, content-type (format of the incoming data) and accept (format of the response).
+        -- iP address (blacklist), url, query parameters, user agent string (to disallow webcrawlers and serach engines), size (request with large file).
+
+    - Validating Input
+        -- Presence / length 
+        -- Type
+        -- Format (legitimate email address)
+        -- whithin a set of values.
+        -- Uniqueness
+
+    - Sanitizing data
+        -- type casting before checking int == (int)
+        -- Replace powerful characters with harmless equivalents.
+        -- Add escape characters before powerful characters 
+        -- always sanitize data before using it.
+
+    # Label variables
+        - Use names to identify condition on of data
+            -- Dirty, raw, unsafe
+            -- clean, sanitize, surface
+            such as, : 
+                $raw_email = $_POST['email']
+                $safe_email = sanitize($raw_email)
+            -- Using variable namesas labels is a simple, effective way to keep track of the security condition  of you data.
+    # Keep code private
+        - public directory
+        - private directory (backstage)
+
+    # Keep Credentials private
+        - dont put Credentials directly inside your code. instead Credentials uses in a separate file. use constant to refer the values.
+        - separate configuration from code is best practice. it also more secure.
+        - all files included Credentials should be excluded from version control.
+        - use ssh key
+
+    # Keep error messages vague
+        - Turn off browser error reporting
+        - Hackers benefit from details about errors.
+
+    # Smart logging (Logs can help to find and fix problems)
+        - Errors (Include as many details about the error as possible)
+        - Sensitive actions (admin, user login / changing user permissions, financial transactions, file exports or deleting database records)
+        - Suspicious activity (page request too quickly, requests looking for common vulnerabilities.)
+
+        # what to log 
+            - Date and time
+            - Source (IP, User [log the ip address of the request])
+            - Action and target
+            - URL, Parameters, cookies
+            - Backtrace 
+
+        Log should kept in restricted area, they can be stored in a database or in simple files in a private directory. dont log sensitive data like post parameters.
