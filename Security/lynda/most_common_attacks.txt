@@ -1,0 +1,6 @@
+# Types of Credentials attacks
+    - Brute force attack
+        maximum time required for brute-force attack is
+        (Possibilities count ^ password length * time per attempt)
+    - Dictionary attack (Prioritize the Dictionary word)
+    - Credentials stuffing (common password accross the website)
