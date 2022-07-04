@@ -94,3 +94,7 @@ NULL
  * 
  * Obtaining specified, returns TRUE and the value assigned to the columns in the result set by PDOStatement :: bindParam () or PDOStatement :: bindColumn () PHP variable method bindings.
  */
+
+ //_____________________________________________________
+
+ # Q7

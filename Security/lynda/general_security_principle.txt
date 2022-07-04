@@ -1,0 +1,36 @@
+# General Security Principles
+
+1. Least Privilege (limiting the access)
+
+    -- such as for code, we make class properties public to private so that other code cannot access.
+
+2. Simple is always more secure
+    - Use clearly named functions and variables
+    - Write code comment
+    - Built in function are better than custom functions
+    - Remove cruft (legacy code or which no longer needed)
+    - Disable unused feature
+    - Breaking up long section of code into smaller functions
+    - give each function a specific purpose, dont let it do more than one thing. give it a name which make purpose clear. that called refactoring. function of the code doesn't change but quality of the code improved.
+    - Dont repeat yourself
+
+3. Trust No one (even authorized users)
+
+4. Always expect the unexpected
+    - Security is proactive not reactive
+
+5. Defense in depth
+    - Physical
+    - technical (hardware , software, network protection (Data backup, anitvirus, Firewalls) )
+    - Administrative (training, writing a security policy, risk assessments, periodic security reviews, data-handling procedures, monitoring, penetration testing)
+
+6. Security through obscurity
+    - http header about server
+    - backend language
+    - whois information
+
+7. Deny list and allow list
+    - Keeping item restrict by default
+
+8. Map exposure points and data passageways
+    - Mapping helps to define the attack surface
