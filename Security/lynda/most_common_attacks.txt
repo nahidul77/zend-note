@@ -99,5 +99,13 @@
             5. if the tokens match, then the form is valid. (Token could be only valid for a limited time period)
 
             -- CSRF defenses rely on having good xss defenses.
-
+        
+        - Other csrf defenses
+            - Validate the HTTP referer header 
+            - Add custom header to ajax XMLHttpRequest
+            - Use Samesite cookie attribute
+            - Protect Sensitive actions
+                -- Confirmation page
+                -- CAPTCHA images
+                -- Reauthentication
             
