@@ -92,5 +92,12 @@
     * Cross-site request protections
         - img tag always send a get request, so it will not do post request and post method url will be rejected.
         - csrf token
+            1. Generate a long, unique, random string to be a token.
+            2. Add the token to the user's session data.
+            3. Add the token to the HTML form.
+            4. When form data is received, compare the tokens.
+            5. if the tokens match, then the form is valid. (Token could be only valid for a limited time period)
+
+            -- CSRF defenses rely on having good xss defenses.
 
             
