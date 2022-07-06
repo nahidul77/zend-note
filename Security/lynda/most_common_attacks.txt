@@ -108,4 +108,48 @@
                 -- Confirmation page
                 -- CAPTCHA images
                 -- Reauthentication
-            
+
+
+# Cookie visibility and theft
+    - Browser cookies easily viewed, manipulated and stolen. Cookie data also may be visible while in transit. cookie data sent as plain text in header of every request to the web server. attacker will see the cookies in open WIFI network. xss also used for to get cookie data.
+
+    - Stealing cookies 
+        -- Duplicate values (An attacker steals a cookie by placing the same values in a cookie on the attacker's browser)
+        -- Forge a request (with cookie data as if it were their own)
+        -- Modify values 
+
+    - prevention
+        -- httpOnly (make them unavailabe for js. the can not read the value by document.cookie anymore)
+        -- Set SSL Certificate
+        -- Use Secure cookies and domain , sub domain restriction
+
+# Session Hijacking
+    - Session Hijacking is an attack where a hacker steals a user's active session, to gain unauthorized access to parts of a website.
+        1. Browser sends cookie with session ID.
+        2. Server reads session ID.
+        3. Server locates session file using session ID.
+        4. Server looks for authentication data in session file.
+        5. Server confirms authentication data.
+        6. Server grants access to the requested page.
+    
+    - Prevent Cross-site scripting and keep cookie data secure
+        - Validate input
+        - Sanitize Output
+        - Content Security Policy
+        - Cookies settings: HttpOnly, Secure, Expire.
+        - Use HTTPS
+        - Mark the session cookie as secure
+        - Expire and remove old sessions files regularly
+        - Destroy sessions at logout
+        - Regenerate session ID after login (Its invalidate any previously stolen session IDs, after successfully login)
+    
+    - Not recommended
+        - Do not compare user agent strings
+        - Do not compare IP addresses
+
+
+# Session Fixation
+    
+
+
+
