@@ -149,7 +149,14 @@
 
 
 # Session Fixation
-    
+    - The attacker provides a user with a valid session identifier. its similar to session haijacking but reversed. Instead of stealing a user's session ID. the attacker gives the user a session ID one that the attacker controls. user and attacker = Same session identifier
+
+    - Prevent Session Fixation
+        - Only accept session id from a cookie (Never accept session identifier a GET or POST variables).
+        - Cross-site scripting defenses
+        - Regenerate session ID after login
+
+
 
 
 
