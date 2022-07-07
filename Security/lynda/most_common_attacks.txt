@@ -183,3 +183,17 @@
         - frequent file uploads limited
 
 
+# Denial of service 
+    - Prevent legitimate users from using a service (underline service may not affected but its no longer available)
+
+    - CIA (Confidentiality, integrity and availability)
+    - attack on availability
+    - Botnet (A collection of computers or other internet-enabled devices that have malware on them)
+
+    * prevention
+        - using services (Cloudeflare, aws shield, microsoft azure, akamai)
+
+
+
+
+
