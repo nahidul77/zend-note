@@ -156,7 +156,30 @@
         - Cross-site scripting defenses
         - Regenerate session ID after login
 
+# Remote code Execution
+   - RCE when an attacker can remotely execute internal operating system commands on a server. to put it another way, an attacker can type commands as if they were sitting at the keyboard.
+    - Read, add, modify, delete files
+    - Change access privileges, passwords
+    - Turn on and off configuarations and services
+    - Communicate to other servers
+
+    * Common System Execution Functions
+        - system, %x, exec, `` 
+    
+    - prevention
+        - Avoid using them
+        - Disable functions
+        - Do not use dynamic data (if its necessary to use)
+        - Sanitize data.
 
 
+# File upload abuse
+    - Abuses the public file upload features of a website
+
+    * prevention
+        - Only authenticating user can upload files
+        - Do not make user-uploaded files available for public download
+        - validation (size, type, max_file_size)
+        - frequent file uploads limited
 
 
