@@ -1,0 +1,9 @@
+# Update software regularly
+# Backup data
+
+# Secure your domain
+    - Domain Name system security extensions (DNSSEC)
+
+# Secure Server
+
+# Join a security community
