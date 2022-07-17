@@ -1,0 +1,3 @@
+2022-07-17 07:31:47 - Test
+2022-07-17 07:31:47 - Login: jsmith logged in
+2022-07-17 07:31:47 - Logout: jsmith logged out
