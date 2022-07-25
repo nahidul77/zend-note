@@ -95,6 +95,43 @@ NULL
  * Obtaining specified, returns TRUE and the value assigned to the columns in the result set by PDOStatement :: bindParam () or PDOStatement :: bindColumn () PHP variable method bindings.
  */
 
- //_____________________________________________________
+//_____________________________________________________
 
- # Q7
+# Q9
+
+/**
+ * hash_pbkdf29()
+ * 
+ * $algo: It is the required parameter which specifies the selected hashing algorithm (like- “md5”, “sha256”, “sha1”).
+$pass: This parameter is used to specify the password to use for the derivation.
+$salt: This parameter is used for the derivation and the value should be generated randomly.
+$itr: This parameter count the number of internal iterations.
+$len: This parameter is used to hold the length of the output string.
+$raw_opt: If this parameter set to True then its output will be raw binary data and if this parameter set to false then output will be lowercase hexits
+ */
+
+
+// $gfg = "Contribute1234";
+// $iterations = 100;
+
+// // Generate a random IV using 
+// // openssl_random_pseudo_bytes()
+// // random_bytes() or another 
+// // suitable source of randomness.
+// $salt = random_bytes(8);
+
+// // Using hash_pbkdf2 function
+// $hash = hash_pbkdf2(
+//     "md5",
+//     $gfg,
+//     $salt,
+//     $iterations,
+//     20,
+//     false
+// );
+
+// // Display result
+// echo $hash; //4c3c46265c520c62b232
+
+
+# crypt(str,salt)
