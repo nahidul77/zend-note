@@ -53,3 +53,31 @@
 // }
 
 // Output: Hello, World!;
+
+
+#Q14
+
+// function myfunction($a, $b = true)
+// {
+//     if ($a && !$b) {
+//         echo "Hello, World!\n";
+//     }
+// }
+// $s = array(
+//     0 => "my",
+//     1 => "call",
+//     2 => '$function',
+//     3 => ' ',
+//     4 => "function",
+//     5 => '$a',
+//     6 => '$b',
+//     7 => 'a',
+//     8 => 'b',
+//     9 => ''
+// );
+// $a = true;
+// $b = false;
+// /* Group A */
+// $name = $s[0] . $s[4] . $s[9] . $s[9] . $s[9] . $s[9];
+// /* Group B */
+// $name(${$s[7]}, ${$s[8]});
