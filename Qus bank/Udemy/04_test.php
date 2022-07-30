@@ -170,3 +170,60 @@
 //     [1] => 3
 //     [2] => 6
 // )
+
+#Q34
+
+// echo strtr('Apples and bananas', 'ae', 'ea'); //Applas end benenes
+
+#Q35
+
+// function f(stdClass &$x = NULL)
+// {
+//     $x = 42;
+// }
+// $z = new stdClass;
+// f($z);
+// var_dump($z); //42
+
+#Q37
+
+// class test
+// {
+//     public $value = 0;
+
+//     function test()
+//     {
+//         $this->value = 1;
+//     }
+//     function __construct()
+//     {
+//         $this->value = 2;
+//     }
+// }
+// $object = new test();
+// echo $object->value; //2
+
+
+#Q39
+
+// function increment(&$val)
+// {
+//     return $val + 1;
+// }
+// $a = 1;
+// echo increment($a); // 2
+// echo increment($a); // 2
+
+
+#Q40
+
+// echo '1' . (print '2') + 3; // 214
+
+
+#Q43
+
+// var_dump(boolval(new StdClass())); //true
+
+#Q48
+
+// echo "22" + "0.2", 23 . 1; //22.2231 
