@@ -67,22 +67,22 @@ and “,” got 20th operator precedence.
 // echo "($n11 + $n12) * $n13 = $ans1" . PHP_EOL; //he result of (10 + 5) * 2 = 30
 
 
-$x = 4;
-$y = 5;
-$a = 4;
-$b = 5;
-echo "First time x++ value :: ";
-echo $a++;
-echo "<br>";
-echo "Second time ++x value :: ";
-echo ++$a;
-echo "<br>";
-echo "First time - - y value :: ";
-echo --$b;
-echo "<br>";
-echo "Second time - - y value :: ";
-echo --$b;
-echo "<br>";
-$result = $x++ + ++$x / --$y * --$y; //4+6/4*3
-echo "The result of (x++)+(++x)/(- - y)*(- - y) :: ";
-echo  "{$result} <br/>";
+// $x = 4;
+// $y = 5;
+// $a = 4;
+// $b = 5;
+// echo "First time x++ value :: ";
+// echo $a++;
+// echo "<br>";
+// echo "Second time ++x value :: ";
+// echo ++$a;
+// echo "<br>";
+// echo "First time - - y value :: ";
+// echo --$b;
+// echo "<br>";
+// echo "Second time - - y value :: ";
+// echo --$b;
+// echo "<br>";
+// $result = $x++ + ++$x / --$y * --$y; //4+6/4*3 
+// echo "The result of (x++)+(++x)/(- - y)*(- - y) :: ";
+// echo  "{$result} <br/>";

@@ -23,3 +23,11 @@
 
 // $a = 1;
 // echo $a + $a--; //  1 + 0 = 1
+
+
+
+#7
+
+/**
+ * PHP directives are the configuration settings used to control various behaviours of PHP functions on your site. This can include for example; the memory limit assigned for PHP, the maximum amount of time before a PHP process will time out and the maximum file-size that could be uploaded via a PHP script.
+ */
