@@ -31,3 +31,18 @@
 /**
  * PHP directives are the configuration settings used to control various behaviours of PHP functions on your site. This can include for example; the memory limit assigned for PHP, the maximum amount of time before a PHP process will time out and the maximum file-size that could be uploaded via a PHP script.
  */
+
+#9
+
+/**
+ * The only difference between these function is that htmlspecialchars() function convert the special characters to HTML entities whereas htmlentities() function convert all applicable characters to HTML entities.
+ */
+
+// $str = '<a href="https://www.geeksforgeeks.org">GeeksforGeeks</a>';
+
+// echo htmlentities($str); //&lt;a href=&quot;https://www.geeksforgeeks.org&quot;&gt;GeeksforGeeks&lt;/a&gt;
+
+
+// $str = '"geeksforgeeks.org" Go to GeeksforGeeks';
+ 
+// echo htmlspecialchars($str, ENT_QUOTES);
