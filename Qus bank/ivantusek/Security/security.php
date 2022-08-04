@@ -44,5 +44,13 @@
 
 
 // $str = '"geeksforgeeks.org" Go to GeeksforGeeks';
- 
+
 // echo htmlspecialchars($str, ENT_QUOTES);
+
+
+
+#22
+
+/**
+ * The open_basedir configuration directive will limit the files that can be opened by PHP to the specified directory-tree. When a script tries to open a file with, for example, fopen() or gzopen(), the location of the file is checked. When the file is outside the specified directory-tree, PHP will refuse to open it. open_basedir is a good protection against remote file inclusion vulnerabilities. For a remote attacker it is not possible to break out of the open_basedir restrictions if he is only able to inject the name of a file to be included. Therefore the number of files he will be able to include with such a local file include vulnerability is limited.
+ */
