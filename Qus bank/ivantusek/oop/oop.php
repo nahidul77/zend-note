@@ -22,3 +22,20 @@
 // echo "ID of obj2: " . spl_object_hash($obj2); //0000000032f49af8000000006f7614d2
 // $obj1->name = "Amar";
 // echo "name: " . $obj2->name; //name: Amar
+
+
+#18
+
+// class A
+// {
+// };
+// class B1 extends A
+// {
+// };
+
+// class_alias('A', 'B2');
+
+// $b1 = new B1;
+// echo get_class($b1); // B1
+// $b2 = new B2;
+// echo get_class($b2); // A
