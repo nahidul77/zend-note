@@ -39,3 +39,28 @@
 // echo get_class($b1); // B1
 // $b2 = new B2;
 // echo get_class($b2); // A
+
+
+#21
+
+// Closures
+
+// $array = array('Ruby', 'PHP', 'JavaScript', 'HTML');
+// array_walk($array, function (&$v, $k) {
+//     $v = $v . ' - Programming Language';
+// });
+// print_r($array);
+
+// Array
+// (
+//     [0] => Ruby - Programming Language
+//     [1] => PHP - Programming Language
+//     [2] => JavaScript - Programming Language
+//     [3] => HTML - Programming Language
+// )
+
+
+// $var = function () {
+//     return 'I am a ' . func_get_arg(0);
+// };
+// print_r($var('Closure')); //I am a Closure
