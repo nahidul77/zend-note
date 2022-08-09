@@ -93,3 +93,17 @@
 // output : 7
 // echo (int) ((0.6 + 0.1) * 10);
 // output : 7
+
+
+#37 
+
+$a = 20;
+
+function myFunction($b)
+{
+    $a = 30;
+    global $a, $c;
+    return $c = $b + $a; // 40 + 20
+}
+
+echo myFunction(40) + $c; // 60 + 60
