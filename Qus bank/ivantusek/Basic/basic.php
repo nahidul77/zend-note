@@ -36,3 +36,60 @@
 // x = 1 y = 3
 // x = 2 y = 1
 // x = 2 y = 3
+
+
+#08 
+
+// function modifyArray(&$array)
+// {
+//     foreach ($array as &$value) {
+//         $value = $value + 2;
+//     }
+
+//     $value = $value + 3;
+// }
+
+// $array = array(1, 2, 3);
+// modifyArray($array);
+// print_r($array);
+
+// Array
+// (
+//     [0] => 3
+//     [1] => 4
+//     [2] => 8
+// )
+
+
+#09
+
+// $a = array(1, 2, 3);
+// $b = array(1 => 2, 0 => 1, 2 => 3);
+// $c = array('a' => 1, 'b' => 2, 'c' => 3);
+
+// var_dump($a == $b); //true
+// var_dump($a === $b); // false
+// var_dump($a == $c); // false
+
+
+// #11 
+
+// function magic($p, $q)
+// {
+//     return ($q == 0) ? $p : magic($q, $p % $q);
+// }
+
+// echo magic(20, 10); // 10
+
+
+#19
+
+// echo ((0.7 + 0.1) * 10);
+// output : 8
+// echo ((0.6 + 0.1) * 10);
+// output : 7
+
+// echo (int) ((0.7 + 0.1) * 10);
+// output : 7
+// echo (int) ((0.6 + 0.1) * 10);
+// output : 7
