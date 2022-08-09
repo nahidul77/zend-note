@@ -97,13 +97,37 @@
 
 #37 
 
-$a = 20;
+// $a = 20;
 
-function myFunction($b)
-{
-    $a = 30;
-    global $a, $c;
-    return $c = $b + $a; // 40 + 20
-}
+// function myFunction($b)
+// {
+//     $a = 30;
+//     global $a, $c;
+//     return $c = $b + $a; // 40 + 20
+// }
 
-echo myFunction(40) + $c; // 60 + 60
+// echo myFunction(40) + $c; // 60 + 60
+
+
+#41
+
+// $a = 123 == 0123;
+
+// var_dump($a); // false
+
+#56 
+
+// $a = 20 % -8;
+
+// echo $a; //4
+
+#58
+
+// echo "this is undefined variable \$i : $i"; //this is undefined variable $i : 
+
+
+#60
+
+// $sale = 200;
+// $sale = $sale - +1;
+// echo $sale; //199
