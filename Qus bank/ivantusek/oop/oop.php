@@ -64,3 +64,10 @@
 //     return 'I am a ' . func_get_arg(0);
 // };
 // print_r($var('Closure')); //I am a Closure
+
+
+#29
+
+// $a = array(0.001 => 'b', .1 => 'c');
+
+// print_r($a); // 0 => 'c'

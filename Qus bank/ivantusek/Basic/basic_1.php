@@ -70,3 +70,147 @@
 // }
 
 //zx1234
+
+
+#24 
+
+/* Note the use of quotes, this is important.  This example is checking
+ * if the string 'TEST' is the name of a constant named TEST */
+
+// if (defined('TEST')) {
+//     echo TEST;
+// } else {
+//     echo 'constant not defined';
+// }
+
+
+#25 
+
+// define('SOMEVAL', 0);
+
+// echo constant('SOMEVAL');
+// // echo strlen(123MSG);
+
+// if (strlen(SOMEVAL) > 0) {
+//     echo 'Hello';
+// }
+
+// Hello
+
+#27
+
+// define('MYCONSTANT', 0);
+
+// if (empty(MYCONSTANT)) {
+//     echo 'hello';
+// } else {
+//     echo 'Bye';
+// };
+
+// hello
+
+
+#31
+
+// $colors = array(
+//     'r' => 'f00',
+//     'g' => '0f0',
+//     'b' => '00f'
+// );
+
+// echo next($colors); // 0f0
+
+// foreach ($colors as $k => $v) {
+//     echo $k; //rgb
+// }
+
+// echo next($colors); // 00f
+
+// while (list($k, $v) = each($colors)) {
+//     echo $k; // b
+// }
+
+// echo reset($colors); // f00
+
+// while (list($k, $v) = each($colors)) {
+//     echo $k; // rgb
+// }
+
+
+
+#32_________________________
+
+// for ($i = ord('a'); $i < ord('e'); $i++) {
+//     echo $i . ' - ' . chr($i) .  PHP_EOL;
+// }
+
+// 97 - a
+// 98 - b
+// 99 - c
+// 100 - d
+
+
+#34___________________________
+
+// for ($i = 5;; $i++) {
+//     if ($i < 10) {
+//         break;
+//     }
+// }
+
+// echo $i; //5
+
+#35___________________
+
+// $x = 5;
+
+// switch ($x) {
+//     case 5:
+//         echo 'a';
+//         break;
+//     default:
+//         echo 'e';
+// } //a
+
+
+
+#36______________________________
+
+// $myArray = array('a', 'b', 'c');
+
+// foreach ($myArray as $k => $v) {
+//     echo $v;
+
+//     for ($i = 1; $i < 5; $i++) {
+//         if ($i == $k) {
+//             break (2);
+//         }
+
+//         echo $i;
+//     }
+// }
+
+//a1234b
+
+
+#37__________________________
+
+// $number = 15;
+
+// if ($number > 15);
+// for ($i = 1; $i < 5; $i++)
+//     echo $i; // 1234
+// echo $number; //15
+
+
+#53____________________________
+
+// $int1 = 25;
+// $int2 = 10;
+
+// echo $int1 / $int2; // 2.5
+// echo ceil($int1 / $int2); // 3
+// echo (int) ($int1 / $int2); // 2
+
+
+// echo 010;
