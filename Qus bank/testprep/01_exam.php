@@ -26,3 +26,19 @@
 // echo $obj(); // 3
 
 // echo $obj; // 2
+
+
+
+## 06 ____________________
+
+// class T
+// {
+//     const A = 42 + 1;
+// }
+
+// echo T::A;  //43
+
+
+## 07 _____________
+
+echo substr_compare('foobar', 'bar', 3);
