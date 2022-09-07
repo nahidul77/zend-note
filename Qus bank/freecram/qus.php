@@ -78,3 +78,26 @@
 // B::test();
 
 // Base B B A B 
+
+
+#67 ___________
+
+// Initialising the two datetime objects
+// $datetime1 = new DateTime('2019-8-10');
+// $datetime2 = new DateTime('2019-9-10');
+
+// Calling the diff() function on above
+// two DateTime objects
+// $difference = $datetime1->diff($datetime2);
+
+// Getting the difference between two
+// given DateTime objects
+// echo $difference->format('%R%a days');  //+31 days
+
+
+#79 ___________________________
+
+$date = new DateTime('2014-03-15');
+
+var_dump($date);
+echo $date->format('d-m-Y');
