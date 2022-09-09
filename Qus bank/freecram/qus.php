@@ -97,7 +97,66 @@
 
 #79 ___________________________
 
-$date = new DateTime('2014-03-15');
+// $date = new DateTime('2014-03-15');
 
-var_dump($date);
-echo $date->format('d-m-Y');
+// var_dump($date);
+// echo $date->format('d-m-Y');
+
+
+#169_________________________
+
+// try {
+//     class MyException extends Exception
+//     {
+//     };
+
+//     try {
+//         throw new MyException;
+//     } catch (Exception $e) {
+//         echo "1:";
+//         throw $e;
+//     } catch (MyException $e) {
+//         echo "2:";
+//         throw $e;
+//     }
+// } catch (Exception $e) {
+//     echo get_class($e);
+// }
+
+//1:MyException;
+
+
+#179 ________________________
+
+// for ($i = 0; $i < 1.02; $i += 0.17) {
+//     $a[$i] = $i;
+// }
+
+// echo count($a);  //1
+
+// Array
+// (
+//     [0] => 0.85
+// )
+
+
+#181_______________________________
+
+// function counter($start, &$stop)
+// {
+//     echo $start;
+//     if ($stop > $start) {
+//         return;
+//     }
+//     counter($start--, ++$stop);
+// }
+// $start = 5;
+// $stop = 2;
+// counter($start, $stop); //55555
+
+
+// $world = 'world';
+
+// echo <<<'TEXT'
+// hello $world
+// TEXT;
