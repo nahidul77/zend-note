@@ -29,4 +29,6 @@ class Math
 }
 
 
-echo Math::init(10)->add(20)->sub(30)->result();
+echo Math::init(10)->add(20)->sub(10)->result(); //20
+
+echo Math::sub(10)->result(); //10
