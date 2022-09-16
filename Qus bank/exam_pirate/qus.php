@@ -333,3 +333,70 @@ Match a single character present in the list below [0-9]
 // $date->modify('-1 month');
 
 // echo $date->format('Y-m-d') . PHP_EOL; //2014-01-15
+
+
+#115___________________________________
+
+// class Foo implements ArrayAccess
+// {
+
+//   function offsetExists($k)
+//   {
+//     return true;
+//   }
+
+//   function offsetGet($k)
+//   {
+//     return 'a';
+//   }
+
+//   function offsetSet($k, $v)
+//   {
+//   }
+
+//   function offsetUnset($k)
+//   {
+//   }
+// }
+
+// $x = new Foo();
+
+// echo array_key_exists('foo', $x) ? 'true' : 'false';  //false
+
+/**
+ * If you call array_key_exists() on an object of a class that implements ArrayAccess, ArrayAccess::offsetExists() wil NOT be called.
+ */
+
+
+#117________________________________
+
+// class Bar
+// {
+
+//   private $a = 'b';
+
+//   public $c = 'd';
+// }
+
+// $x = (array) new Bar();
+
+// echo array_key_exists('a', $x) ? 'true' : 'false';
+
+// echo '-';
+
+// echo array_key_exists('c', $x) ? 'true' : 'false';
+
+//false-true
+
+
+#119____________________________
+
+// $a = array('a', 'b' => 'c');
+
+// echo property_exists((object) $a, 'a') ? 'true' : 'false';
+
+// echo '-';
+
+// echo property_exists((object) $a, 'b') ? 'true' : 'false';
+
+//false-true
