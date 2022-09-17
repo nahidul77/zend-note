@@ -400,3 +400,145 @@ Match a single character present in the list below [0-9]
 // echo property_exists((object) $a, 'b') ? 'true' : 'false';
 
 //false-true
+
+
+#121_____________________________
+
+// $text = 'This is text';
+
+// $text1 = <<<'TEXT'
+
+// $text
+
+// TEXT;
+
+// $text2 = <<<TEXT
+
+// $text1
+
+// TEXT;
+
+// echo "$text2"; //$text
+
+
+#127____________________________
+
+// function modifyArray(&$array)
+
+// {
+
+//   foreach ($array as &$value) {
+
+//     $value = $value + 1;
+//   }
+
+//   $value = $value + 2;
+// }
+
+// $array = array(1, 2, 3);
+
+// modifyArray($array);
+
+// print_r($array);
+
+//OUTPUT : 2,3,6
+
+
+
+#129_______________________________
+
+// function fibonacci(&$x1 = 0, &$x2 = 1)
+
+// {
+
+//   $result = $x1 + $x2;
+
+//   $x1 = $x2;
+
+//   $x2 = $result;
+
+//   return $result;
+// }
+
+// for ($i = 0; $i < 10; $i++) {
+
+//   echo fibonacci() . ',';
+// }
+
+// Output: 1,1,1,1,1,1,1,1,1,1,
+
+
+#136__________________________________
+
+// trait MyTrait
+// {
+
+//   private $abc = 1;
+
+//   public function increment()
+//   {
+
+//     $this->abc++;
+//   }
+
+//   public function getValue()
+//   {
+
+//     return $this->abc;
+//   }
+// }
+
+// class MyClass
+// {
+
+//   use MyTrait;
+
+//   public function incrementBy2()
+//   {
+
+//     $this->increment();
+
+//     $this->abc++;
+//   }
+// }
+
+// $c = new MyClass;
+
+// $c->incrementBy2();
+
+// var_dump($c->getValue());  //Output : int(3)
+
+
+#139_____________________________
+
+// class Number
+// {
+
+//   private $v;
+
+//   private static $sv = 10;
+
+//   public function __construct($v)
+//   {
+//     $this->v = $v;
+//   }
+
+//   public function mul()
+//   {
+
+//     return static function ($x) {
+
+//       return isset($this) ? $this->v * $x : self::$sv * $x;
+//     };
+//   }
+// }
+
+// $one = new Number(1);
+
+// $two = new Number(2);
+
+// $double = $two->mul();
+
+// $x = Closure::bind($double, null, 'Number');
+
+// echo $x(5); //output : 50
