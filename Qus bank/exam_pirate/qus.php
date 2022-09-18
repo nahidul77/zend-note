@@ -542,3 +542,111 @@ Match a single character present in the list below [0-9]
 // $x = Closure::bind($double, null, 'Number');
 
 // echo $x(5); //output : 50
+
+
+#141________________________
+
+// $a = array_merge([1, 2, 3] + [4 => 1, 5, 6]);
+
+// echo $a[2];  //output : 3
+
+// print_r($a);
+
+
+#153_________________________
+
+// class test
+// {
+
+//   public $value = 0;
+
+//   function test()
+//   {
+
+//     $this->value = 1;
+//   }
+
+//   function __construct()
+//   {
+
+//     $this->value = 2;
+//   }
+// }
+
+// $object = new test();
+
+// echo $object->value;  // Output : 2
+
+
+#154_____________________________
+
+// class T
+
+// {
+
+//   const A = 42 + 1;
+// }
+
+// echo T::A;  // 43
+
+
+#155______________________________________
+
+// define('PI', 3.14);
+
+// class T
+
+// {
+
+//   const PI = PI;
+// }
+
+// class Math
+
+// {
+
+//   const PI = T::PI;
+// }
+
+// echo Math::PI;  //output : 3.14
+
+
+#157________________________________________
+
+// function f(stdClass &$x = NULL)
+// {
+//   $x = 42;
+// }
+
+// $z = new stdClass;
+
+// f($z);
+
+// var_dump($z); // output: 42
+
+
+#158___________________________________
+
+// try {
+
+//   class MyException extends Exception
+//   {
+//   };
+
+//   try {
+
+//     throw new MyException;
+//   } catch (Exception $e) {
+
+//     echo "1:";
+
+//     throw $e;
+//   } catch (MyException $e) {
+
+//     echo "2:";
+
+//     throw $e;
+//   }
+// } catch (Exception $e) {
+
+//   echo get_class($e);  //output : 1:MyException
