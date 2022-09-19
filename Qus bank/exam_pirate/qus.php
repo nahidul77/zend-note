@@ -650,3 +650,129 @@ Match a single character present in the list below [0-9]
 // } catch (Exception $e) {
 
 //   echo get_class($e);  //output : 1:MyException
+
+
+#180__________________________________________
+
+// for ($i = 0; $i < 1.02; $i += 0.17) {
+
+//   $a[$i] = $i;
+// }
+
+// echo count($a); //1
+
+
+#181_________________________________
+
+// $a = array('a', 'b', 'c');
+
+// $a = array_keys(array_flip($a));
+
+// print_r($a);
+
+// Array
+// (
+//     [0] => a
+//     [1] => b
+//     [2] => c
+// )
+
+#182____________________________________
+
+// print_r(array_combine(array("A", "B", "C"), array(1, 2, 3)));
+
+// Array
+// (
+//     [A] => 1
+//     [B] => 2
+//     [C] => 3
+// )
+
+#183_______________________________
+
+// $array = array("Sue", "Mary", "John", "Anna");
+
+// echo $array[array_rand($array)]; // output : random value
+
+
+#184________________________________
+
+// $array = array(1, 2, 3);
+
+// while (list(, $v) = each($array));
+
+// var_dump(current($array)); //bool(false)
+
+#185_____________________________
+
+// $a = array(0, 1, 2 => array(3, 4));
+
+// $a[3] = array(4, 5);
+
+// echo count($a, 1); //8
+
+#187_______________________________
+
+// $text = <<<EOT
+
+// The big bang bonged under the bung.
+
+// EOT;
+
+// preg_match_all('@b.n?g@', $text, $matches);
+
+// print_r($matches);
+
+// Array
+// (
+//     [0] => Array
+//         (
+//             [0] => big
+//             [1] => bang
+//             [2] => bong
+//             [3] => bung
+//         )
+
+// )
+
+#191 ______________________________
+
+// $test = '100.00';
+// $test = '100';
+
+// preg_match('/^\d+(?:\.[0-9]+)?$/', $test, $matches);
+
+// print_r($matches);
+
+
+#192_________________________________
+
+// $str = "The cat sat on the roof of their house.";
+
+// $matches = preg_split("/(the)/i", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+// print_r($matches);
+
+// Array
+// (
+//     [0] => 
+//     [1] => The
+//     [2] =>  cat sat on 
+//     [3] => the
+//     [4] =>  roof of 
+//     [5] => the
+//     [6] => ir house.
+// )
+
+#195___________________________
+
+// echo strpos("me myself and I", "m", 2); //3
+
+// echo substr_compare("foobar", "bar", 3); // 0
+
+
+#198___________________________
+
+// $test = '/etc/conf.d/wireless';
+
+// echo substr($test, strrpos($test, '/'));  ///wireless
