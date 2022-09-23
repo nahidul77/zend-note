@@ -486,3 +486,150 @@
 // );
 
 // echo $values[0][3][1][0];  //40
+
+#384_____________________________
+
+// $newArray[E_STRICT] = 'foo'; // VALID
+
+#386______________________
+
+// $arr = array_flip(['a' => 1, 'b' => 2, 'c' => 3]);
+
+// foreach (array_values($arr) as $k => $v) {
+//     echo $k;
+// }
+
+#Output : 012
+
+
+#387________________________
+
+// $cars = ['year' => 2010, 'make' => 'Porsche', 'model' => 911];
+// while ($value = next($cars)) {
+//     echo $value;
+// }
+
+#output : Porsche911
+
+#389_______________________
+
+// $numbers = array(5, 6, 7, 8);
+// end($numbers);
+// while (key($numbers)) {
+//     echo current($numbers);
+//     prev($numbers);
+// }
+
+#output : 876
+
+#391___________________________
+
+// function reducer($total, $elt)
+// {
+//     return $elt + $total;
+// }
+// $arr = [1, 2, 3, 4, 5];
+// echo array_reduce($arr, 'reducer', 1);  // 16
+
+#393____________________________
+
+// function sortByLength($a, $b)
+// {
+//     $lenA = strlen($a);
+//     $lenB = strlen($b);
+//     if ($lenA == $lenB) {
+//         return 0;
+//     }
+//     /**line**/
+//     return $lenA < $lenB ? -1 : 1;
+// }
+
+// $values = ['ccc', 'a', 'eeeeee', 'dddd', 'bb', 'fffff'];
+// usort($values, 'sortByLength');
+// echo $values[5]; //eeeeee
+
+
+#394_______________________________
+
+// $filenames = array(
+//     'img12.png',
+//     'img7.png',
+//     'img21.png',
+//     'img1.png'
+// );
+
+// natsort($filenames);
+// print_r($filenames);
+// $values = array_values($filenames);
+// print_r($values);
+// echo $values[1];
+
+// Array
+// (
+//     [3] => img1.png
+//     [1] => img7.png
+//     [0] => img12.png
+//     [2] => img21.png
+// )
+
+// Array
+// (
+//     [0] => img1.png
+//     [1] => img7.png
+//     [2] => img12.png
+//     [3] => img21.png
+// )
+// img7.png
+
+#397_______________________
+
+// $fruitAndVeg = array(
+//     'c' => 'Carrot',
+//     'p' => 'Tomato',
+//     'b' => 'Banana',
+//     't' => 'Potato',
+//     'a' => 'Apple'
+// );
+
+// /**line**/
+// ksort($fruitAndVeg);
+// $keys = array_keys($fruitAndVeg);
+// echo $keys[0]; //a 
+
+
+#398_______________________
+
+// $values = array(37, 5, "09");
+// sort($values, SORT_STRING);
+// foreach ($values as $v) {
+//     echo $v;
+// }
+
+#output : 09375
+
+#399________________________
+
+// $subs = ['@'  => '<at>',  'com' => 'net'];
+// $email = "your_name@mail.com";
+// echo strtr($email, $subs);
+
+#output : your_name<at>mail.net
+
+#400___________________________
+
+// function buildUrl($domain, $path)
+// {
+//     //insertlineofcodehere
+//     $ret = rtrim($domain, '/') . '/' . ltrim($path, '/');
+//     return $ret;
+// }
+
+// $domain1 = 'http://phpriot.com/';
+// $domain2 = 'http://phpriot.com';
+// $path = '/quiz/';
+
+// echo $url1 = buildUrl($domain1, $path) . PHP_EOL;
+// echo $url2 = buildUrl($domain2, $path);
+
+// http://phpriot.com/quiz/
+// http://phpriot.com/quiz/
