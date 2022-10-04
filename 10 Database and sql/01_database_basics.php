@@ -112,4 +112,104 @@ PDO::ATTR_EMULATE_PREPARES Enables or disables emulation of prepared statements.
 PDO::MYSQL_ATTR_USE_BUFFERED_QUERY (available in MySQL): Use buffered queries.
 PDO::ATTR_DEFAULT_FETCH_MODE: Set default fetch mode. Description of modes is available in PDOStatement::fetch() documentation.
 
+
+Query vs Execute
+$pdoConnection->exec("INERT INTO … ); // returns the number of rows affected on success, after exec need to use fetch/fetchAll
+$pdoConnection->query("SELECT * FROM … ); // returns the query result
+Prepared statements
+only values can be bound (not the column or table name)
+only scalars can be bound (not array/object/NULL)
+$query="SELECT * FROM posts WHERE topicID = :tid AND poster = :userid";
+$statement=$pdoConnection->prepare($query);
+
+$statement->execute(array(':tid'=>100,':userid'=>12));
+$userAPosts=$statement->fetchAll();
+
+OR
+
+$query="SELECT * FROM posts WHERE topicID = ? AND poster = ?";
+$statement=$pdoConnection->prepare($query);
+$statement->bindParam(1,$name);
+$statement->bindParam(2,$value);
+$name='one';$value=1;
+$statement->execute();
+$userAPosts=$statement->fetchAll();
+foreach($userAPosts as $key=>$value){…}
+$statement->bindColumn($column,$parameter); // to be used after $statement->execute, by column name or number
+$statement->bindParam($parameter,&$variable,$datatype);  // the variable is bound as a reference, datatype can be PDO::PARAM_INT, PDO::PARAM_STR, PDO::PARAM_BOOL, PDO::PARAM_NULL, etc.
+$statement->bindValue($parameter,$value,$datatype); // bind values to parameters, $value can be string or variable name
+$statement->closeCursor(); // frees up the connection to the server so that other SQL statements may be issued, but leaves the statement in a state that enables it to be executed again
+$statement->columnCount(); // return the number of columns in the result set
+$statement->rowCount(); // return the number of rows affected (not reliable for SELECT)
+$statement->execute(); // execute the prepared statement, populate the placeholders if necessary e.g. $sth->execute( array(‘:calories’ => $calories, ‘:colour’ => $colour) );, use $statement->bindParam or $statement->bindValue
+$statement->fetch($mode); // fetches the next row from a result set
+PDO::FETCH_ASSOC: returns an array indexed by column name as returned in your result set
+PDO::FETCH_BOTH (default): returns an array indexed by both column name and 0-indexed column number as returned in your result set
+PDO::FETCH_BOUND: returns TRUE and assigns the values of the columns in your result set to the PHP variables to which they were bound with the PDOStatement::bindColumn() method
+PDO::FETCH_CLASS: returns a new instance of the requested class, mapping the columns of the result set to named properties in the class. If fetch_style includes PDO::FETCH_CLASSTYPE (e.g. PDO::FETCH_CLASS | PDO::FETCH_CLASSTYPE) then the name of the class is determined from a value of the first column.
+PDO::FETCH_INTO: updates an existing instance of the requested class, mapping the columns of the result set to named properties in the class
+PDO::FETCH_LAZY: combines PDO::FETCH_BOTH and PDO::FETCH_OBJ, creating the object variable names as they are accessed
+PDO::FETCH_NUM: returns an array indexed by column number as returned in your result set, starting at column 0
+PDO::FETCH_OBJ: returns an anonymous object with property names that correspond to the column names returned in your result set
+$statement->fetchAll($mode,$arg); // fetches all rows from a result set as an array
+PDO::FETCH_COLUMN: fetch only 1 column (begin with 0)
+PDO::FETCH_UNIQUE: fetch only unique values of a single column
+PDO::FETCH_GROUP: an associative array grouped by the values of a specified column
+$statement->fetchColumn($column_num); // returns a single column from the next row of a result set
+$statement->fetchObject($class_name); // fetches the next row and returns it as an object
+$statement->setFetchMode(); // set the default fetch mode
+$statement->nextRowset();  // for databases that support stored procedures with multiple row sets returned
+$statement->debugDumpParams();  // dumps the information of the prepared statement with the params
+try {
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$dbh->beginTransaction();
+$dbh->exec("insert into staff (id, first, last) values (23, 'Joe', 'Bloggs')");
+$dbh->exec("insert into salarychange (id, amount, changedate)
+values (23, 50000, NOW())");
+$dbh->commit();
+
+} catch (Exception $e) {
+$dbh->rollBack();
+echo "Failed: " . $e->getMessage();
+}
+Error Handling
+PDO::ERRMODE_SILENT default mode, PDO will set an error code which can be retrieved using PDO::errorCode() or PDO::errorInfo()
+PDO::ERRMODE_WARNING in addition to the error code, an E_WARNING message will be emitted
+PDO::ERRMODE_EXCEPTION an PDOException object will be throw (->getMessage() and ->getCode()), transactions are rollbacked automatically
+when creating PDO connections, a PDOException will always be thrown if the connection fails regardless of which PDO::ATTR_ERRMODE is currently set
+PDO::errorInfo()
+0 – SQLSTATE error code (a five characters alphanumeric identifier defined in the ANSI SQL standard) same as PDO::errorCode()
+1 – Driver-specific error code.
+2 – Driver-specific error message.
+try {
+$dbh = new PDO($dsn, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+} catch (PDOException $e) {
+echo 'Connection failed: ' . $e->getMessage();
+exit;
+}
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+Handling Large Files
+when storing or retrieving “large” data (>4kb) in the database (text or binary), use the PDO::PARAM_LOB type code in PDOStatement::bindParam() or PDOStatement::bindColumn() calls. PDO::PARAM_LOB tells PDO to map the data as a stream, so that you can manipulate it using the PHP Streams API.
+$stmt = $db->prepare("select contenttype, imagedata from images where id=?");
+$stmt->execute(array($_GET['id']));
+$stmt->bindColumn(1, $type, PDO::PARAM_STR, 256);
+$stmt->bindColumn(2, $lob, PDO::PARAM_LOB);
+$stmt->fetch(PDO::FETCH_BOUND);
+header("Content-Type: $type");
+fpassthru($lob);
+
+$stmt = $db->prepare("insert into images (contenttype, imagedata) values (?, ?)");
+$fp = fopen($_FILES['file']['tmp_name'], 'rb');
+$stmt->bindParam(1, $_FILES['file']['type']);
+$stmt->bindParam(2, $fp, PDO::PARAM_LOB);
+$stmt->execute();
+SQLite
+sqlite3 in PHP 5.3
+is a database without the database => the data is written to a file
+rather than using a separate program to persistently maintain the database, SQLite on the other hand requires the C libraries that comprise the DB to be built into whatever program would like to use them
+was built into PHP by default as of PHP5
+It’s fast, free, and has nice licensing terms
+Apart from not needing to connect to a remote server or process, SQLite is no different from other database systems
+catagorizes data into textual and numeric
  */
