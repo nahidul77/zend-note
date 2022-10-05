@@ -212,4 +212,5 @@ was built into PHP by default as of PHP5
 It’s fast, free, and has nice licensing terms
 Apart from not needing to connect to a remote server or process, SQLite is no different from other database systems
 catagorizes data into textual and numeric
+
  */
