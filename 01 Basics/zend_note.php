@@ -106,5 +106,17 @@ print "$b\n"; // prints 50
 ?>
 As of PHP 5, the new operator (for objects) assigns by reference automatically, so assigning the result of new by reference (e.g. $a = &new C;) results in an E_DEPRECATED message in PHP 5.3 and later.
 
+Bitwise Operators
+Bitwise operators allow evaluation and manipulation of specific bits within an integer. Integral numbers are internally converted into bits: 5 -> 0101 = 0*8 + 1*4 + 0*2 + 1*1
+Use parentheses to ensure the desired precedence. For example, $a & $b == true evaluates the equivalency then the bitwise and; while ($a & $b) == true evaluates the bitwise and then the equivalency.
+Be aware of data type conversions. If both the left-hand and right-hand parameters are strings, the bitwise operator will operate on the characters’ ASCII values.
 
+$a & $b (And) — Bits that are set in both $a and $b are set. Matching 1 in both (e.g. 4&1 // result 0).
+$a | $b (Or (inclusive or)) — Bits that are set in either $a or $b are set. At least one 1 (e.g. 4|1 // result 5).
+$a ^ $b (Xor (exclusive or)) — Bits that are set in $a or $b but not both are set. Only one 1 in both.
+~ $a (Not) — Bits that are set in $a are not set, and vice versa. Convert 0 in to 1 and 1 in to 0
+>> (Shift Right) – All of the bits in the binary number shift N places to the right in the number, the right most digit(s) falls out, and the resulting number is padded on the left with 0s. A right shift of one is equivalent to dividing a number by two, and tossing the remainder (e.g. 4>>1 // result 2).
+<< (Shift Left) – All of the digits shift N places to the left, padding the right with 0s. A left shift of one is equivalent to multiplying a number by two  (e.g. 4<<1 // result 8).
+Bit shifting in PHP is arithmetic. Bits shifted off either end are discarded. Left shifts have zeros shifted in on the right while the sign bit (the sign bit is the left most bit indicating where the signed integer is positive(0) or negative(1)) is shifted out on the left, meaning the sign of an operand is not preserved. Right shifts have copies of the sign bit shifted in on the left, meaning the sign of an operand is preserved.
+An example of bitwise operation is the PHP error reporting feature. e.g. E_ALL & ~E_NOITCE (00000000000000000111011111111111 & 11111111111111111111111111110111 yields 00000000000000000111011111110111 the number of digits depends on the platform, the above is on a 32-bit platform)
  */
