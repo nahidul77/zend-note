@@ -94,4 +94,17 @@ $a = 3;
 $a += 5; // Equal 8
 3 = $a; // output error
 Note that the assignment copies the original variable to the new one (assignment by value), so changes to one will not affect the other.
+
+Assignment by Reference
+Assignment by reference is also supported, using the $var = &$othervar; syntax (ampersand & before variable). Assignment by reference means that both variables end up pointing at the same data, and nothing is copied anywhere. Once assigned, by reference will continue in effect until unset. By reference is slower in PHP.
+
+<?php
+$a = 3;
+$b = &$a; // or a space in-between & $a // $b is a reference to $a
+$b = 50;print "$a\n"; // prints 50
+print "$b\n"; // prints 50
+?>
+As of PHP 5, the new operator (for objects) assigns by reference automatically, so assigning the result of new by reference (e.g. $a = &new C;) results in an E_DEPRECATED message in PHP 5.3 and later.
+
+
  */
