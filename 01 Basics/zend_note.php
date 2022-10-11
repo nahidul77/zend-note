@@ -119,4 +119,30 @@ $a ^ $b (Xor (exclusive or)) — Bits that are set in $a or $b but not both are 
 << (Shift Left) – All of the digits shift N places to the left, padding the right with 0s. A left shift of one is equivalent to multiplying a number by two  (e.g. 4<<1 // result 8).
 Bit shifting in PHP is arithmetic. Bits shifted off either end are discarded. Left shifts have zeros shifted in on the right while the sign bit (the sign bit is the left most bit indicating where the signed integer is positive(0) or negative(1)) is shifted out on the left, meaning the sign of an operand is not preserved. Right shifts have copies of the sign bit shifted in on the left, meaning the sign of an operand is preserved.
 An example of bitwise operation is the PHP error reporting feature. e.g. E_ALL & ~E_NOITCE (00000000000000000111011111111111 & 11111111111111111111111111110111 yields 00000000000000000111011111110111 the number of digits depends on the platform, the above is on a 32-bit platform)
+
+
+Comparison Operators
+Comparison operators, as their name implies, allow you to compare two values.
+
+$a == $b (Equivalence) — TRUE if $a is equal to $b after type juggling.
+$a === $b (Identity) — TRUE if $a is equal to $b, and they are of the same type.
+$a != $b $a <> $b (Non-equivalent) — TRUE if $a is not equal to $b after type juggling.
+$a !== $b (Non-identical) — TRUE if $a is not equal to $b, or they are not of the same type
+$a < $b (Less than) — TRUE if $a is strictly less than $b.
+$a > $b (Greater than) — TRUE if $a is strictly greater than $b.
+$a <= $b (Less than or equal to) — TRUE if $a is less than or equal to $b.
+$a >= $b (Greater than or equal to) — TRUE if $a is greater than or equal to $b.
+If you compare a number with a string or the comparison involves numerical strings, then each string is converted to a number and the comparison performed numerically. The type conversion does not take place when the comparison is === or !== as this involves comparing the type as well as the value.
+For various types, comparison is done according to the following:
+
+null to string — Convert NULL to ””, or other words to empty string
+bool or null to anything — Convert to bool
+object to object — When using the comparison operator ==, object variables are compared in a simple manner, namely: Two object instances are equal if they have the same attributes and values, and are instances of the same class. On the other hand, when using the identity operator ===, object variables are identical if and only if they refer to the same instance of the same class
+string, resource or number to string, resource or number — Translate strings and resources to numbers
+array to array — Array with fewer members is smaller, if key from operand 1 is not found in operand 2 then arrays are uncomparable, otherwise – compare value by value
+array to anything — array is always greater
+object to anything — object is always greater.
+NOTE: ( 0 == “a” ) is true, (“1” == “01”) is true
+
+
  */
