@@ -145,4 +145,14 @@ object to anything — object is always greater.
 NOTE: ( 0 == “a” ) is true, (“1” == “01”) is true
 
 
+Ternary Operator
+Another conditional operator is the ?: (or ternary) operator. The expression (expr1) ? (expr2) : (expr3) evaluates to expr2 if expr1 evaluates to TRUE, and expr3 if expr1 evaluates to FALSE. Since PHP 5.3, it is possible to leave out the middle part of the ternary operator. Expression expr1 ?: expr3 returns expr1 if expr1 evaluates to TRUE, and expr3 otherwise.
+Please note that the ternary operator is a statement, and that it doesn’t evaluate to a variable, but to the result of a statement. This is important to know if you want to return a variable by reference. The statement return $var == 42 ? $a : $b; in a return-by-reference function will therefore not work and a warning is issued in later PHP versions.
+
+It is recommended that you avoid “stacking” ternary expressions. PHP’s behaviour when using more than one ternary operator within a single statement is non-obvious.
+
+
+print 0=='a1'? 'TRUE': 'FALSE'; or
+0=='a1'? print 'TRUE': print 'FALSE';
+but NOT 0=='a1'? echo 'TRUE': echo 'FALSE';
  */
