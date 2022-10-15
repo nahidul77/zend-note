@@ -495,3 +495,19 @@
 // echo $a[0];
 
 // Warning: Undefined array key 0 in 
+
+
+#qustions_______________________
+
+// $a = [1, 2, 3];
+
+// unset($a[1]);
+
+// print_r($a);
+
+
+// Array
+// (
+//     [0] => 1
+//     [2] => 3
+// )
