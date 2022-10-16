@@ -1194,11 +1194,20 @@
 // Throwable , Error, Exception, ErrorException (base)
 
 #69______________________
-
+// declare(strict_types=1);
 // try {
-//     f();
+//     f(); //i forgot the code, but its produce error because of strict_types declare.
 // } catch (Exception $e) {
 //     echo 'exception';
 // } catch (Error $e) {
 //     echo 'Error';
 // }
+
+#70_____________________
+
+// function add(int $a, int $b): float
+// {
+//     return $a + $b;
+// }
+
+// var_dump(add(10.6, 9.4));
