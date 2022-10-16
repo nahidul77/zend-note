@@ -1191,7 +1191,7 @@
 
 #68______________________
 
-// Throwable , Error, Exception, ErrorException (base)
+// Throwable , Error, Exception, ErrorException (finding the base interface)
 
 #69______________________
 // declare(strict_types=1);
@@ -1211,3 +1211,11 @@
 // }
 
 // var_dump(add(10.6, 9.4));
+
+#71________________________
+
+// http status code like 3xx, 4xx or 5xx
+
+#72__________________________
+
+// closeCursor()
