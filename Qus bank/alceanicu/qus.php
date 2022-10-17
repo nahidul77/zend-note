@@ -1182,7 +1182,7 @@
 
 #66________________________
 
-// $_FILES["name"]["tmp_name"] as provisinal name
+// $_FILES["name"]["tmp_name"] as provisional name after upload a file
 
 
 #67__________________
