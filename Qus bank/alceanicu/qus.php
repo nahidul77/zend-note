@@ -1175,6 +1175,9 @@
 
 // Difference between get and post for preference
 
+// post automatically encrypt data
+// post support large data transfer
+
 
 #65___________________________
 
