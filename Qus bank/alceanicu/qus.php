@@ -1176,7 +1176,7 @@
 // Difference between get and post for preference
 
 // post automatically encrypt data
-// post support large data transfer
+// post support large data transfer 
 
 
 #65___________________________
@@ -1191,6 +1191,10 @@
 #67__________________
 
 // Difference between ?? and ?:
+
+// combine with isset
+
+// support 7.2 onward
 
 #68______________________
 
