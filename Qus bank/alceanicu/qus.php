@@ -1192,9 +1192,9 @@
 
 // Difference between ?? and ?:
 
-// combine with isset ??
+// combine with isset and assignment
 
-// combine with isset ?
+// combine with isset and null 
 
 // support 7.2 onward
 
@@ -1205,7 +1205,11 @@
 #69______________________
 // declare(strict_types=1);
 // try {
-//     f(); //i forgot the code, but its produce error because of strict_types declare.
+        // function foo(int $a, int $b){
+        //     return $c = $a * $b;
+        // }
+//     foo(2.00, 3.00); //i forgot exact the code, but its produce error because of strict_types declare.
+
 // } catch (Exception $e) {
 //     echo 'exception';
 // } catch (Error $e) {
