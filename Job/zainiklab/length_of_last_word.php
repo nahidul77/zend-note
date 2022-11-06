@@ -1,9 +1,10 @@
 <?php
 
-function lengthOfLastWord(string $str)
+function length_of_last_word(string $str): int
 {
     $input_length = strlen($str);
 
+    // checking the constraints
     if (
         $input_length <= 104 &&
         preg_match('/^[A-Za-z\s]*[A-Za-z]+[A-Za-z\s]*$/', $str)
@@ -12,7 +13,7 @@ function lengthOfLastWord(string $str)
         $len = 0;
         $x = trim($str);
 
-        for ($i = 0; $i < strlen($x); $i++) {
+        for ($i = 0; $i < $input_length; $i++) {
             if ($x[$i] == ' ') {
                 $len = 0;
             } else {
@@ -21,8 +22,6 @@ function lengthOfLastWord(string $str)
         }
 
         return $len;
-    } else {
-        return 'Invalid input';
     }
 }
 
