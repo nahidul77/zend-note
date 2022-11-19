@@ -1,0 +1,6 @@
+1. Laravel Queue
+2. CSRF
+3. OAuth Server connection
+4. Middleware
+5. Transaction and bug
+6. Database Indexing
