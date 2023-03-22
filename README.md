@@ -2,7 +2,7 @@
 
 Zend study materials and preparation guide & PHP practice
 
-- Questions
+- Question bank
 - Answers
 - Practices
 - Suggestions
